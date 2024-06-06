@@ -1,5 +1,10 @@
-import Image from "next/image";
+import Nav from "./components/Nav";
 
 export default function Home() {
-  return <div>Agnes Knitting</div>;
+  return (
+    <>
+      <Nav />
+      <div className="">Agnes Knitting</div>
+    </>
+  );
 }

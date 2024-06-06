@@ -1,3 +1,10 @@
+import Nav from "@/app/components/Nav";
+
 export default function page() {
-  return <div>checkout</div>;
+  return (
+    <>
+      <Nav />
+      <div>checkout</div>
+    </>
+  );
 }

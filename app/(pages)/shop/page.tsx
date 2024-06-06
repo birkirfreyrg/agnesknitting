@@ -1,3 +1,10 @@
+import Nav from "@/app/components/Nav";
+
 export default function page() {
-  return <div>shop</div>;
+  return (
+    <>
+      <Nav />
+      <div>shop</div>
+    </>
+  );
 }
