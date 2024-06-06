@@ -15,7 +15,7 @@ export default function Nav() {
           className="h-full w-full object-contain"
         ></Image>
       </Link>
-      <div className="flex gap-10">
+      <div className="flex text-lg gap-10">
         <Link href="/">home</Link>
         <Link href="/shop">shop</Link>
         <Link href="/projects">projects</Link>
