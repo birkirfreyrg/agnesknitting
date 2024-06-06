@@ -1,10 +1,13 @@
+import FeaturedItem from "./components/FeaturedItem";
 import Nav from "./components/Nav";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <div className="">Agnes Knitting</div>
+      <div className="">
+        <FeaturedItem />
+      </div>
     </>
   );
 }

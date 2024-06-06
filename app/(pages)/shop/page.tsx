@@ -1,10 +1,11 @@
 import Nav from "@/app/components/Nav";
+import ProductList from "@/app/components/ProductList";
 
 export default function page() {
   return (
     <>
       <Nav />
-      <div>shop</div>
+      <ProductList items={["Sweaters", "Baby Clothes", "Scarfs", "Hats"]} />
     </>
   );
 }

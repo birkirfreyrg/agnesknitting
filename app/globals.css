@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hover-parent:hover .hover-text span {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
