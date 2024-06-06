@@ -4,7 +4,7 @@ export default function page() {
   return (
     <>
       <Nav />
-      <div>cart</div>
+      <div>Cart</div>
     </>
   );
 }
