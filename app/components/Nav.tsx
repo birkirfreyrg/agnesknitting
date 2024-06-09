@@ -18,7 +18,6 @@ export default function Nav() {
       </Link>
       <div className="flex justify-center text-lg gap-10 w-1/3 ">
         <Link href="/">home</Link>
-        <Link href="/shop">shop</Link>
         <Link href="/projects">projects</Link>
         <Link href="/about">about</Link>
       </div>
