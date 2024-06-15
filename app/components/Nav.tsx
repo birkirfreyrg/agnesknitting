@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import Cart from "./CartIcon";
-import SearchIcon from "./SearchIcon";
+import { options } from "../api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth";
 
-export default function Nav() {
+export default async function Nav() {
+  const session = await getServerSession(options);
   return (
     <div className="w-full h-20 bg-white shadow-md flex items-center justify-between px-8">
       <Link href="/" className="h-full flex items-center w-1/3">
@@ -16,16 +17,36 @@ export default function Nav() {
         ></Image>
         <h2 className="text-lg">Agnes Knitting</h2>
       </Link>
-      <div className="flex justify-center text-lg gap-10 w-1/3 ">
+      <div className="flex justify-center text-lg gap-10 w-/3 ">
         <Link href="/">home</Link>
         <Link href="/projects">projects</Link>
         <Link href="/about">about</Link>
       </div>
-      <div className="flex gap-10 w-1/3 justify-end">
-        <SearchIcon />
-        <Link href="/cart">
-          <Cart />
-        </Link>
+      <div className="flex w-1/3 justify-end">
+        {session ? (
+          <Link
+            href="/api/auth/signout"
+            className="h-full flex gap-1 items-center w-1/3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="size-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9"
+              />
+            </svg>
+            <h1>Sign out</h1>
+          </Link>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
