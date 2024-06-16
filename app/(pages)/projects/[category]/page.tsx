@@ -30,8 +30,8 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
   return (
     <>
       <Nav />
-      <div className="bg-gray-100 min-h-screen py-10">
-        <div className="max-w-7xl mx-auto bg-white p-8 shadow-lg rounded-lg">
+      <div className="bg-white min-h-screen py-10">
+        <div className=" mx-auto bg-white p-8">
           <h1 className="text-4xl font-bold text-center mb-8">
             {categoryStr} Projects
           </h1>
@@ -39,7 +39,7 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
             <div className="flex flex-wrap -mx-2 my-4">
               {filteredProjects.map((project) => (
                 <div key={project.id} className="w-full sm:w-1/2 lg:w-1/3 p-2">
-                  <div className="border p-4 flex flex-col items-center">
+                  <div className="border p-4 flex flex-col items-center rounded-lg shadow-md">
                     <Image
                       src={project.imageUrl}
                       alt={project.name}
@@ -60,7 +60,7 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
           )}
           <div className="mt-8 text-center">
             <Link href="/projects">
-              <div className="text-blue-500 underline">Back to Projects</div>
+              <div className="text-black underline">Back to Projects</div>
             </Link>
           </div>
         </div>

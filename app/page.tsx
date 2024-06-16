@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className="">
+      <div className="flex px-52">
         <FeaturedItem />
       </div>
     </>

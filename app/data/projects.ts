@@ -85,4 +85,25 @@ export const projects = [
   },
 ];
 
-export const categories = ["sweaters", "babyclothes", "scarves", "hats"];
+export const categories = [
+  {
+    id: 1,
+    name: "sweaters",
+    imageUrl: "/knittedSweater.webp",
+  },
+  {
+    id: 2,
+    name: "babyclothes",
+    imageUrl: "/babyClothes.webp",
+  },
+  {
+    id: 3,
+    name: "scarves",
+    imageUrl: "/knittedScarf.webp",
+  },
+  {
+    id: 4,
+    name: "hats",
+    imageUrl: "/knittedHat.webp",
+  },
+];

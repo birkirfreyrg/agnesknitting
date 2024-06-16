@@ -1,81 +1,38 @@
 import Nav from "@/app/components/Nav";
-import ProductList from "@/app/components/ProductList";
 import Link from "next/link";
 import { categories } from "../../data/projects";
+import Image from "next/image";
 
 export default function page() {
-  const items = [
-    {
-      imageUrl: "/knittedSweater.webp",
-      category: "Sweaters",
-      name: "Item 1",
-      price: 2000,
-    },
-    {
-      imageUrl: "/babyClothes.webp",
-      category: "Baby Clothes",
-      name: "Item 2",
-      price: 1000,
-    },
-    {
-      imageUrl: "/knittedScarf.webp",
-      category: "Scarfs",
-      name: "Item 3",
-      price: 1900,
-    },
-    {
-      imageUrl: "/knittedHat.webp",
-      category: "Hats",
-      name: "Item 4",
-      price: 16900,
-    },
-    {
-      imageUrl: "/knittedSweater.webp",
-      category: "Sweaters",
-      name: "Item 1",
-      price: 2000,
-    },
-    {
-      imageUrl: "/babyClothes.webp",
-      category: "Baby Clothes",
-      name: "Item 2",
-      price: 1000,
-    },
-    {
-      imageUrl: "/knittedScarf.webp",
-      category: "Scarfs",
-      name: "Item 3",
-      price: 1900,
-    },
-    {
-      imageUrl: "/knittedHat.webp",
-      category: "Hats",
-      name: "Item 4",
-      price: 16900,
-    },
-  ];
-
   return (
     <>
       <Nav />
-      {console.log(categories)}
-
-      <div className="bg-gray-100 min-h-screen py-10">
-        <div className="max-w-7xl mx-auto h-auto bg-white p-8 shadow-lg rounded-lg">
+      <div className="bg-white min-h-screen py-10">
+        <div className=" mx-auto h-auto bg-white p-8">
           <h1 className="text-4xl font-bold text-center mb-8">Projects</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.map((category) => (
-              <Link key={category} href={`/projects/${category}`}>
-                <div className="border p-4 flex flex-col items-center">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+              <Link key={category.id} href={`/projects/${category.name}`}>
+                <div className="relative w-full h-48 rounded-lg shadow-md overflow-hidden cursor-pointer">
+                  <Image
+                    src={category.imageUrl}
+                    alt={category.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute inset-0 w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-15 flex items-center justify-center">
+                    <span className="text-white text-lg font-semibold">
+                      {category.name.charAt(0).toUpperCase() +
+                        category.name.slice(1)}
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
           </div>
         </div>
       </div>
-      {/*      <ProductList items={items} />
-       */}
     </>
   );
 }

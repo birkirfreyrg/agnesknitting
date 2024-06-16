@@ -10,12 +10,12 @@ export default function FeaturedItem() {
             <Image
               src="/knittedSweater.webp"
               alt="Knitted Sweater"
-              width={300}
-              height={300}
+              width={150}
+              height={150}
               className=" object-cover h-full w-full"
             ></Image>
             <div>
-              <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-50 hover:text-7xl hover:bg-opacity-25 duration-1000">
+              <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
                 Sweaters
               </h3>
             </div>
@@ -26,11 +26,11 @@ export default function FeaturedItem() {
             <Image
               src="/babyClothes.webp"
               alt="Baby Clothes"
-              width={300}
-              height={300}
+              width={150}
+              height={150}
               className=" object-cover h-full w-full"
             ></Image>
-            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-50 hover:text-7xl hover:bg-opacity-25 duration-1000">
+            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
               Baby Clothes
             </h3>
           </Link>
@@ -42,11 +42,11 @@ export default function FeaturedItem() {
             <Image
               src="/knittedScarf.webp"
               alt="Knitted Scarf"
-              width={300}
-              height={300}
+              width={150}
+              height={150}
               className=" object-cover h-full w-full"
             ></Image>
-            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-50 hover:text-7xl hover:bg-opacity-25 duration-1000">
+            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
               Scarfs
             </h3>
           </Link>
@@ -56,11 +56,11 @@ export default function FeaturedItem() {
             <Image
               src="/knittedHat.webp"
               alt="Knitted Hat"
-              width={300}
-              height={300}
+              width={150}
+              height={150}
               className=" object-cover h-full w-full"
             ></Image>
-            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-50 hover:text-7xl hover:bg-opacity-25 duration-1000">
+            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
               hats
             </h3>
           </Link>
