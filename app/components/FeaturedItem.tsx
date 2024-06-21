@@ -6,7 +6,10 @@ export default function FeaturedItem() {
     <div className="flex flex-wrap justify-between items-center h-full w-full gap-2 p-4">
       <div className=" flex gap-2 w-full h-full">
         <div className="relative h-full w-1/2">
-          <Link href="/" className="hover-parent h-full flex items-center">
+          <Link
+            href="/projects/sweaters"
+            className="hover-parent h-full flex items-center"
+          >
             <Image
               src="/knittedSweater.webp"
               alt="Knitted Sweater"
@@ -22,7 +25,10 @@ export default function FeaturedItem() {
           </Link>
         </div>
         <div className=" relative h-full w-1/2">
-          <Link href="/" className="h-full flex items-center">
+          <Link
+            href="/projects/babyclothes"
+            className="h-full flex items-center"
+          >
             <Image
               src="/babyClothes.webp"
               alt="Baby Clothes"
@@ -38,7 +44,7 @@ export default function FeaturedItem() {
       </div>
       <div className="flex w-full h-full gap-2">
         <div className="relative h-full w-1/2">
-          <Link href="/" className="h-full flex items-center">
+          <Link href="/projects/scarves" className="h-full flex items-center">
             <Image
               src="/knittedScarf.webp"
               alt="Knitted Scarf"
@@ -47,12 +53,12 @@ export default function FeaturedItem() {
               className=" object-cover h-full w-full"
             ></Image>
             <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
-              Scarfs
+              Scarves
             </h3>
           </Link>
         </div>
         <div className=" relative h-full w-1/2">
-          <Link href="/" className="h-full flex items-center">
+          <Link href="/projects/hats" className="h-full flex items-center">
             <Image
               src="/knittedHat.webp"
               alt="Knitted Hat"
