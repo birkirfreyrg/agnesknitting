@@ -6,7 +6,7 @@ import Link from "next/link";
 import ClickAwayListener from "react-click-away-listener";
 import XIcon from "./XIcon";
 
-export function HamburgerMenu() {
+export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClickAway = () => {
