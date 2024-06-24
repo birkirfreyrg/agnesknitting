@@ -9,6 +9,7 @@ export default async function Nav() {
   return (
     <div className="w-full h-20 bg-white shadow-md flex items-center justify-between px-8">
       <HamburgerMenu />
+
       <Link href="/" className="h-full flex  items-center w-1/3">
         <Image
           src="/knittingLogo.webp"
