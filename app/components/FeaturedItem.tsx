@@ -18,7 +18,7 @@ export default function FeaturedItem() {
               className=" object-cover h-full w-full"
             ></Image>
             <div>
-              <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
+              <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 lg:hover:text-7xl lg:hover:bg-opacity-10 duration-1000">
                 Sweaters
               </h3>
             </div>
@@ -36,7 +36,7 @@ export default function FeaturedItem() {
               height={150}
               className=" object-cover h-full w-full"
             ></Image>
-            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
+            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 lg:hover:text-7xl lg:hover:bg-opacity-10 duration-1000">
               Baby Clothes
             </h3>
           </Link>
@@ -52,7 +52,7 @@ export default function FeaturedItem() {
               height={150}
               className=" object-cover h-full w-full"
             ></Image>
-            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
+            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 lg:hover:text-7xl lg:hover:bg-opacity-10 duration-1000">
               Scarves
             </h3>
           </Link>
@@ -66,7 +66,7 @@ export default function FeaturedItem() {
               height={150}
               className=" object-cover h-full w-full"
             ></Image>
-            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 hover:text-7xl hover:bg-opacity-10 duration-1000">
+            <h3 className="hover-text absolute inset-0 text-white text-4xl font-bold flex items-center justify-center bg-black bg-opacity-25 lg:hover:text-7xl lg:hover:bg-opacity-10 duration-1000">
               hats
             </h3>
           </Link>
