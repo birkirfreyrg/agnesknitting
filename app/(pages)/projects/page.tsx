@@ -7,7 +7,7 @@ export default function page() {
   return (
     <>
       <Nav />
-      <div className="bg-white min-h-screen py-10">
+      <div className="bg-white min-h-screen">
         <div className=" mx-auto h-auto bg-white p-8">
           <h1 className="text-4xl font-bold text-center mb-8">Projects</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -30,7 +30,7 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
   return (
     <>
       <Nav />
-      <div className="bg-white min-h-screen py-10">
+      <div className="bg-white min-h-screen">
         <div className=" mx-auto bg-white p-8">
           <h1 className="text-4xl font-bold text-center mb-8">
             {categoryStr} Projects

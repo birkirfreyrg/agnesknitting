@@ -19,7 +19,7 @@ export default async function Nav() {
         ></Image>
         <h2 className="text-lg">Agnes Knitting</h2>
       </Link>
-      <div className="flex justify-center md:flex hidden text-lg gap-10 w-/3 ">
+      <div className="justify-center md:flex hidden text-lg gap-10 w-/3 ">
         <Link href="/">home</Link>
         <Link href="/projects">projects</Link>
         <Link href="/about">about</Link>
