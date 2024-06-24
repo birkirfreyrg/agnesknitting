@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { options } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
+import { HamburgerMenu } from "./HamburgerMenu";
 
 export default async function Nav() {
   const session = await getServerSession(options);
   return (
     <div className="w-full h-20 bg-white shadow-md flex items-center justify-between px-8">
-      <Link href="/" className="h-full flex items-center w-1/3">
+      <HamburgerMenu />
+      <Link href="/" className="h-full flex  items-center w-1/3">
         <Image
           src="/knittingLogo.webp"
           alt="Agnes Knitting Logo"
@@ -17,7 +19,7 @@ export default async function Nav() {
         ></Image>
         <h2 className="text-lg">Agnes Knitting</h2>
       </Link>
-      <div className="flex justify-center text-lg gap-10 w-/3 ">
+      <div className="flex justify-center md:flex hidden text-lg gap-10 w-/3 ">
         <Link href="/">home</Link>
         <Link href="/projects">projects</Link>
         <Link href="/about">about</Link>

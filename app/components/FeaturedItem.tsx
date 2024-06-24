@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function FeaturedItem() {
   return (
     <div className="flex flex-wrap justify-between items-center h-full w-full gap-2 p-4">
-      <div className=" flex gap-2 w-full h-full">
-        <div className="relative h-full w-1/2">
+      <div className=" flex flex-wrap md:flex-nowrap gap-2 w-full h-full">
+        <div className="relative h-full w-full md:w-1/2 ">
           <Link
             href="/projects/sweaters"
             className="hover-parent h-full flex items-center"
@@ -24,7 +24,7 @@ export default function FeaturedItem() {
             </div>
           </Link>
         </div>
-        <div className=" relative h-full w-1/2">
+        <div className=" relative h-full w-full md:w-1/2">
           <Link
             href="/projects/babyclothes"
             className="h-full flex items-center"
@@ -42,8 +42,8 @@ export default function FeaturedItem() {
           </Link>
         </div>
       </div>
-      <div className="flex w-full h-full gap-2">
-        <div className="relative h-full w-1/2">
+      <div className="flex flex-wrap md:flex-nowrap w-full h-full gap-2">
+        <div className="relative h-full w-full md:w-1/2">
           <Link href="/projects/scarves" className="h-full flex items-center">
             <Image
               src="/knittedScarf.webp"
@@ -57,7 +57,7 @@ export default function FeaturedItem() {
             </h3>
           </Link>
         </div>
-        <div className=" relative h-full w-1/2">
+        <div className=" relative h-full w-full md:w-1/2">
           <Link href="/projects/hats" className="h-full flex items-center">
             <Image
               src="/knittedHat.webp"
