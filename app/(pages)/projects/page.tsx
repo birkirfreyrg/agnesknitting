@@ -21,7 +21,7 @@ export default function page() {
                     objectFit="cover"
                     className="absolute inset-0 w-full h-full"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center text-3xl hover:text-5xl hover:bg-opacity-15 duration-1000">
+                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center text-3xl lg:hover:text-5xl lg:hover:bg-opacity-15 duration-1000">
                     <span className="text-white  font-semibold">
                       {category.name.charAt(0).toUpperCase() +
                         category.name.slice(1)}

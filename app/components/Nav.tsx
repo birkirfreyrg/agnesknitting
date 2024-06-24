@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { options } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
-import { HamburgerMenu } from "./HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default async function Nav() {
   const session = await getServerSession(options);
