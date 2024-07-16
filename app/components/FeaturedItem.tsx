@@ -1,3 +1,4 @@
+// app/components/FeaturedItem.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { FrontpageItem } from "../../types";
@@ -23,7 +24,7 @@ const FeaturedItem: React.FC<FeaturedItemProps> = ({ items }) => {
               className="object-cover h-full w-full"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 text-4xl lg:hover:text-7xl lg:hover:bg-opacity-10 duration-1000">
-              <h3 className="text-white font-bold ">{item.name}</h3>
+              <h3 className="text-white font-bold">{item.name}</h3>
             </div>
           </Link>
         </div>

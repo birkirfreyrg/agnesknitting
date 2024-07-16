@@ -5,7 +5,9 @@ import Nav from "./components/Nav";
 
 async function fetchFrontpageItems(): Promise<FrontpageItem[]> {
   try {
-    const res = await fetch("http://localhost:3000/api/frontpage");
+    const res = await fetch("http://localhost:3000/api/frontpage", {
+      cache: "no-store", // Ensure data is fetched on every request
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -17,7 +19,7 @@ async function fetchFrontpageItems(): Promise<FrontpageItem[]> {
   }
 }
 
-const Home: React.FC = async () => {
+const Home = async () => {
   const frontpageItems = await fetchFrontpageItems();
 
   return (
