@@ -4,11 +4,17 @@ import { FrontpageItem } from "../types";
 import Nav from "./components/Nav";
 
 async function fetchFrontpageItems(): Promise<FrontpageItem[]> {
-  const res = await fetch("http://localhost:3000/api/frontpage");
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+  try {
+    const res = await fetch("http://localhost:3000/api/frontpage");
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error:", error);
+    throw new Error("Something went wrong");
   }
-  return res.json();
 }
 
 const Home: React.FC = async () => {

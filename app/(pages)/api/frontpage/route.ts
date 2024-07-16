@@ -44,16 +44,10 @@ export async function POST(req: Request) {
       createdAt: new Date(),
     };
 
-    console.log("Inserting new frontpage item:", newFrontpageItem);
-
     const result = await db.collection("frontpage").insertOne(newFrontpageItem);
-    console.log("Insert result:", result);
-
     const insertedFrontpageItem = await db
       .collection("frontpage")
       .findOne({ _id: result.insertedId });
-
-    console.log("Inserted frontpage item:", insertedFrontpageItem);
 
     return NextResponse.json(insertedFrontpageItem, { status: 201 });
   } catch (e) {
@@ -104,15 +98,15 @@ export async function DELETE(req: Request) {
   }
 }
 
-// Handle PATCH requests for frontpage collection
-export async function PATCH(req: Request) {
+// Handle PUT requests for frontpage collection
+export async function PUT(req: Request) {
   try {
     const client = await clientPromise;
     const db = client.db("agnes_data");
     const body = await req.json();
-    const { id, ...updateFields } = body;
+    const { _id, ...updateFields } = body; // Make sure to extract _id
 
-    if (!id) {
+    if (!_id) {
       return NextResponse.json(
         { error: "Missing required id parameter" },
         { status: 400 }
@@ -121,7 +115,7 @@ export async function PATCH(req: Request) {
 
     const result = await db
       .collection("frontpage")
-      .updateOne({ _id: new ObjectId(id) }, { $set: updateFields });
+      .updateOne({ _id: new ObjectId(_id) }, { $set: updateFields });
 
     if (result.matchedCount === 0) {
       return NextResponse.json(
@@ -132,11 +126,14 @@ export async function PATCH(req: Request) {
 
     const updatedFrontpageItem = await db
       .collection("frontpage")
-      .findOne({ _id: new ObjectId(id) });
+      .findOne({ _id: new ObjectId(_id) });
 
-    return NextResponse.json(updatedFrontpageItem, { status: 200 });
+    return NextResponse.json(
+      { message: "Item updated successfully", item: updatedFrontpageItem },
+      { status: 200 }
+    );
   } catch (e) {
-    console.error("PATCH request error:", e);
+    console.error("PUT request error:", e);
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 }
