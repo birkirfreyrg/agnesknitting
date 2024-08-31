@@ -77,7 +77,7 @@ export default function Upload({ onUpload }: UploadProps) {
           accept="image/png, image/webp, image/jpeg"
         />
         <button
-          className="flex mt-1 bg-gray-800 hover:bg-gray-700 text-white text-base px-5 py-3 outline-none rounded w-max cursor-pointer font-[sans-serif]"
+          className="flex mt-1 bg-gray-800 hover:bg-gray-700 text-white text-base px-2 py-1 outline-none rounded w-max cursor-pointer font-[sans-serif]"
           type="submit"
           disabled={uploading}
         >
