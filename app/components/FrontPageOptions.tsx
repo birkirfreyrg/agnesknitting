@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import Upload from "./Upload"; // Import the Upload component
 
 interface FormData {
   _id: string;
@@ -43,6 +44,12 @@ export default function UpdateItemForm() {
     const newFormData = [...formData];
     newFormData[index] = { ...newFormData[index], [field]: value };
     setFormData(newFormData);
+  };
+
+  const handleImageUpload = (index: number, imageUrl: string) => {
+    // Now handleImageUpload knows the index
+    console.log("Image uploaded:", imageUrl);
+    handleInputChange(index, "imageUrl", imageUrl); // Updating the correct item
   };
 
   const handleSubmit = async (index: number) => {
@@ -108,14 +115,8 @@ export default function UpdateItemForm() {
             </label>
             <label className="flex flex-col">
               Image URL:
-              <input
-                type="text"
-                value={item.imageUrl}
-                onChange={(e) =>
-                  handleInputChange(index, "imageUrl", e.target.value)
-                }
-                className="border p-1"
-                required
+              <Upload
+                onUpload={(imageUrl) => handleImageUpload(index, imageUrl)}
               />
             </label>
             <label className="flex flex-col">
