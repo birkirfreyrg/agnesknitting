@@ -4,3 +4,10 @@ export interface FrontpageItem {
   imageUrl: string;
   linkUrl: string;
 }
+
+export interface AboutpageItem {
+  id: string;
+  title: string;
+  imageUrl: string;
+  description: string;
+}
