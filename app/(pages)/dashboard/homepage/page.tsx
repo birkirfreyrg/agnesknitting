@@ -3,7 +3,6 @@ import { options } from "../../../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 import UserCard from "../../../components/UserCard";
 import FrontPageOptions from "@/app/components/FrontPageOptions";
-import Link from "next/link";
 import AdminLinkTree from "@/app/components/AdminLinkTree";
 
 export default async function page() {
