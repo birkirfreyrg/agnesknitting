@@ -2,6 +2,7 @@
 
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import Upload from "./Upload"; // Import the Upload component
+import AddProjectCategory from "./AddProjectCategory";
 
 interface FormData {
   _id: string;
@@ -78,6 +79,24 @@ export default function UpdateItemForm() {
     }
   }
 
+  async function addProject(name: string, imageUrl: string, linkUrl: string) {
+    const response = await fetch("/api/projectspage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, imageUrl, linkUrl }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log("Project category added successfully:", data);
+    } else {
+      console.error("Error adding project category:", data.error);
+    }
+  }
+
   function handleDeleteClick(id: string): void {
     deleteProject(id)
       .then(() => {
@@ -119,10 +138,10 @@ export default function UpdateItemForm() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-2 gap-2">
       {formData.map((item, index) => (
-        <div key={item._id} className="flex flex-wrap w-1/2 mb-2">
-          <div className="flex flex-col w-full border p-2">
+        <div key={item._id} className=" mb-2">
+          <div className="flex flex-col h-full w-full border p-2">
             <label className="hidden">
               Item ID:
               <input
@@ -185,6 +204,8 @@ export default function UpdateItemForm() {
           </div>
         </div>
       ))}
+
+      <AddProjectCategory />
     </div>
   );
 }
