@@ -88,7 +88,7 @@ export default function UpdateItemForm() {
       {formData.map((item, index) => (
         <div key={item._id} className="flex flex-wrap w-1/2 mb-2">
           <div className="flex flex-col w-full border p-2">
-            <label className="flex flex-col">
+            <label className="hidden">
               Item ID:
               <input
                 type="text"
@@ -130,12 +130,14 @@ export default function UpdateItemForm() {
                 required
               />
             </label>
-            <button
-              onClick={() => handleSubmit(index)}
-              className="mt-2 p-2 bg-blue-500 text-white w-1/4"
-            >
-              Submit
-            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={() => handleSubmit(index)}
+                className=" mt-2 p-2 bg-blue-600 rounded-sm text-white w-1/3"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       ))}

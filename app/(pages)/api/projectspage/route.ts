@@ -26,11 +26,11 @@ export async function POST(req: Request) {
     const db = client.db("agnes_data");
     const body = await req.json();
 
-    const { title, imageUrl, linkUrl } = body;
+    const { name, imageUrl, linkUrl } = body;
 
     // Validate required fields
-    if (!title || !imageUrl || !linkUrl) {
-      console.error("Missing required fields:", { title, imageUrl, linkUrl });
+    if (!name || !imageUrl || !linkUrl) {
+      console.error("Missing required fields:", { name, imageUrl, linkUrl });
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -38,13 +38,15 @@ export async function POST(req: Request) {
     }
 
     const newProjectspageItem = {
-      title,
+      name,
       imageUrl,
       linkUrl,
       createdAt: new Date(),
     };
 
-    const result = await db.collection("projectspage").insertOne(newProjectspageItem);
+    const result = await db
+      .collection("projectspage")
+      .insertOne(newProjectspageItem);
     const insertedProjectspageItem = await db
       .collection("projectspage")
       .findOne({ _id: result.insertedId });

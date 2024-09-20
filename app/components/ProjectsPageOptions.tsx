@@ -9,6 +9,10 @@ interface FormData {
   imageUrl: string;
   linkUrl: string;
 }
+interface DeleteResponse {
+  message?: string;
+  error?: string;
+}
 
 export default function UpdateItemForm() {
   const [formData, setFormData] = useState<FormData[]>([]);
@@ -18,7 +22,7 @@ export default function UpdateItemForm() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/frontpage");
+        const response = await fetch("/api/projectspage");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -52,10 +56,41 @@ export default function UpdateItemForm() {
     handleInputChange(index, "imageUrl", imageUrl); // Updating the correct item
   };
 
+  async function deleteProject(id: string): Promise<void> {
+    try {
+      const response = await fetch(`/api/projectspage?id=${id}`, {
+        method: "DELETE",
+      });
+
+      // Define the expected shape of the response data
+      const data: DeleteResponse = await response.json();
+
+      if (response.ok) {
+        console.log("Project category deleted successfully:", data.message);
+      } else {
+        console.error("Error deleting project category:", data.error);
+      }
+    } catch (error) {
+      console.error(
+        "An error occurred while deleting the project category:",
+        error
+      );
+    }
+  }
+
+  function handleDeleteClick(id: string): void {
+    deleteProject(id)
+      .then(() => {
+        console.log("Project deleted");
+        window.location.reload();
+      })
+      .catch((err: Error) => console.error("Error:", err));
+  }
+
   const handleSubmit = async (index: number) => {
     const item = formData[index];
     try {
-      const response = await fetch("/api/frontpage", {
+      const response = await fetch("/api/projectspage", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -113,12 +148,14 @@ export default function UpdateItemForm() {
                 required
               />
             </label>
-            <label className="flex flex-col">
+
+            <label className=" ">
               Image URL:
               <Upload
                 onUpload={(imageUrl) => handleImageUpload(index, imageUrl)}
               />
             </label>
+
             <label className="hidden">
               Link URL:
               <input
@@ -131,12 +168,18 @@ export default function UpdateItemForm() {
                 required
               />
             </label>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center justify-center">
               <button
                 onClick={() => handleSubmit(index)}
                 className=" mt-2 p-2 bg-blue-600 rounded-sm text-white w-1/3"
               >
                 Submit
+              </button>
+              <button
+                onClick={() => handleDeleteClick(item._id)}
+                className=" mt-2 p-2 bg-red-600 rounded-sm text-white w-1/3"
+              >
+                Delete
               </button>
             </div>
           </div>

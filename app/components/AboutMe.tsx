@@ -18,7 +18,7 @@ const greetings2 = `I specialize in [specific knitting techniques or types of
 
 const greetings3 = `Thank you for visiting my page and I hope you enjoy my creations!`;
 
-const AboutMe: React.FC<AboutMeProps> = ({ items }) => {
+const AboutMe = ({ items }: AboutMeProps) => {
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-4xl mx-auto bg-white p-8 shadow-md rounded-lg">

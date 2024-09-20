@@ -7,7 +7,7 @@ interface FeaturedItemProps {
   items: FrontpageItem[];
 }
 
-const FeaturedItem: React.FC<FeaturedItemProps> = ({ items }) => {
+const FeaturedItem = ({ items }: FeaturedItemProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 py-4 px-52">
       {items.map((item, index) => (

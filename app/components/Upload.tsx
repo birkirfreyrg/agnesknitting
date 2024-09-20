@@ -63,9 +63,9 @@ export default function Upload({ onUpload }: UploadProps) {
   return (
     <main>
       <div></div>
-      <form className="" onSubmit={handleSubmit}>
+      <form className="flex gap-2 h-10" onSubmit={handleSubmit}>
         <input
-          className="w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded"
+          className="w-full h-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded"
           id="file"
           type="file"
           onChange={(e) => {
@@ -77,13 +77,13 @@ export default function Upload({ onUpload }: UploadProps) {
           accept="image/png, image/webp, image/jpeg"
         />
         <button
-          className="flex mt-1 bg-gray-800 hover:bg-gray-700 text-white text-base px-2 py-1 outline-none rounded w-max cursor-pointer font-[sans-serif]"
+          className="flex flex-col items-center justify-center bg-gray-800 hover:bg-gray-700 text-white text-base px-2 py-1 outline-none rounded w-max cursor-pointer font-[sans-serif]"
           type="submit"
           disabled={uploading}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 mr-2 fill-white inline"
+            className="w-12  fill-white inline"
             viewBox="0 0 32 32"
           >
             <path
@@ -95,7 +95,6 @@ export default function Upload({ onUpload }: UploadProps) {
               data-original="#000000"
             />
           </svg>
-          Upload
         </button>
       </form>
     </main>
