@@ -84,9 +84,9 @@ export default function UpdateItemForm() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-2 gap-2">
       {formData.map((item, index) => (
-        <div key={item._id} className="flex flex-wrap w-1/2 mb-2">
+        <div key={item._id} className="w-full">
           <div className="flex flex-col w-full border p-2">
             <label className="hidden">
               Item ID:

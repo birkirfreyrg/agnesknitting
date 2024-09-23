@@ -140,7 +140,7 @@ export default function UpdateItemForm() {
   return (
     <div className="grid grid-cols-2 gap-2">
       {formData.map((item, index) => (
-        <div key={item._id} className=" mb-2">
+        <div key={item._id} className="w-full">
           <div className="flex flex-col h-full w-full border p-2">
             <label className="hidden">
               Item ID:
